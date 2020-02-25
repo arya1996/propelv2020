@@ -12,7 +12,7 @@ public class LoginBean {
 		// TODO Auto-generated constructor stub
 	}
 
-	// Parameterized constructor
+	// Parameterised constructor with username & passowrd
 	public LoginBean(String userName, String password) {
 		super();
 		this.userName = userName;
