@@ -22,12 +22,11 @@ public class LoginDaoServices {
 		String roleDB = "";
 
 		try {
-
+			// creating connection
 			con = ConnectionFactory.getConnection();
 			statement = con.createStatement();
 			resultSet = statement
 					.executeQuery("select usr_userName,usr_passWord,usr_role from users");
-
 			while (resultSet.next()) {
 
 				userNameDB = resultSet.getString("usr_userName");

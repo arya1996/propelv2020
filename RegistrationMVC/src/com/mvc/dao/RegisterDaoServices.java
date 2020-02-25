@@ -32,6 +32,7 @@ public class RegisterDaoServices {
 		return instance;
 	}
 
+	//SQL queries
 	private static final String INSERT_USERS_SQL = "insert into users(usr_fullName,usr_email,usr_userName,usr_password,usr_isActive,usr_role,usr_gender,usr_date)values(?,?,?,?,?,?,?,?)";
 	private static final String SELECT_USER_BY_ID = "SELECT * from users where usr_slNo =?";
 	private static final String SELECT_ALL_USERS = "SELECT * from users";
@@ -46,6 +47,7 @@ public class RegisterDaoServices {
 	public String registerUser(RegisterBean registerBean) throws Exception {
 
 		try {
+			//creating connection
 			connection = ConnectionFactory.getConnection();
 			statement = connection.prepareStatement(INSERT_USERS_SQL);
 			statement.setString(1, registerBean.getFullName());
@@ -72,6 +74,7 @@ public class RegisterDaoServices {
 	public RegisterBean selectUser(int id) {
 		RegisterBean register = null;
 		try {
+			//creating connection
 			connection = ConnectionFactory.getConnection();
 			statement = connection.prepareStatement(SELECT_USER_BY_ID);
 			statement.setInt(1, id);
@@ -107,6 +110,7 @@ public class RegisterDaoServices {
 	
 	public List<RegisterBean> selectAllUsers() {
 
+		//creating arraylist
 		List<RegisterBean> users = new ArrayList<RegisterBean>();
 		try {
 			connection = ConnectionFactory.getConnection();
@@ -165,6 +169,7 @@ public boolean updateUser(RegisterBean register) throws SQLException{
 		
 		try
 		{
+			//creating connection
 			connection=ConnectionFactory.getConnection();
 			statement=connection.prepareStatement(UPDATE_USERS_SQL);
 			statement.setString(1, register.getFullName());

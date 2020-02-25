@@ -22,7 +22,7 @@ public class RegisterBean {
 		// TODO Auto-generated constructor stub
 	}
 
-	//parameterized constructor
+	//parameterised constructor
 	public RegisterBean(Integer id, String fullName, String email,
 			String userName, String password, String active, String roleId,String gender,
 			Date date ) {
@@ -38,7 +38,7 @@ public class RegisterBean {
 		this.date = date;		
 	}
 
-	//parameterized constructor
+	//parameterised constructor
 	public RegisterBean(String fullName, String email, String userName,
 			String password, String active, String roleId, String gender,
 			Date date) {
